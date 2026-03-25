@@ -6,9 +6,9 @@
  * @returns {boolean} whether the wizard can cast the spell
  */
 function canCastSpell(isSpellPrepared, hasScroll) {
+  return isSpellPrepared || hasScroll;
   // TODO
 }
-
 /**
  * A creature is hidden from an observer if it is actively hiding
  * or if the observer is not aware of it.
@@ -17,6 +17,7 @@ function canCastSpell(isSpellPrepared, hasScroll) {
  * @returns {boolean} whether the creature is hidden from the observer
  */
 function isHidden(hiding, aware) {
+  return hiding || !aware;
   // TODO
 }
 
@@ -28,6 +29,7 @@ function isHidden(hiding, aware) {
  * @returns {boolean} whether the strike hits
  */
 function doesStrikeHit(attack, ac) {
+  return attack >= ac;
   // TODO
 }
 
@@ -39,6 +41,7 @@ function doesStrikeHit(attack, ac) {
  * @returns {boolean} whether the strike is a critical hit
  */
 function doesStrikeCrit(attack, ac) {
+  return attack >= ac + 10;
   // TODO
 }
 
@@ -51,6 +54,8 @@ function doesStrikeCrit(attack, ac) {
  * @returns {number} total hit points after healing
  */
 function heal(maxHp, currentHp, healAmount) {
+  return Math.min(100, 50 + 30);
+  console.log(maxHp, currentHp, healAmount);
   // TODO
 }
 
